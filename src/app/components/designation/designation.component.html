@@ -1,13 +1,19 @@
 <div class="row">
+    <div class="col-12 text-center" *ngIf="isLoadder==true ; else notLoader" >
+        <div class="spinner-border"></div>
+    </div>
    
-    <div class="col-3" *ngFor="let item of designnationList; let i = index">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some example text. Some example text.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+    <ng-template #notLoader>
+        <div class="col-3" *ngFor="let item of designnationList; let i = index">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">{{item.designation}}</h4>
+    
+                    <a href="#" class="card-link">Edit</a>
+                    <a href="#" class="card-link">Delete</a>
+                </div>
             </div>
         </div>
-    </div>
+    </ng-template>
+
 </div>

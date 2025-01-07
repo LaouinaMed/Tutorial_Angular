@@ -22,6 +22,6 @@ export class Client {
         this.regNo = '';
         this.pincode = '';
         this.gstNo = '';
-        this.contactPersonName = ';'
+        this.contactPersonName = ''
     }
   }

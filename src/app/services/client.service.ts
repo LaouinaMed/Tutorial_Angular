@@ -16,11 +16,11 @@ export class ClientService {
     return this.http.get<APIResponseModel>(environment.API_URL + "GetAllClients")
   }
 
-  addUpdate(object :APIResponseModel): Observable<APIResponseModel>{
-    return this.http.post<APIResponseModel>(environment.API_URL + "GetAllClients",object)
+  addUpdate(object :Client): Observable<APIResponseModel>{
+    return this.http.post<APIResponseModel>(environment.API_URL + "AddUpdateClient",object)
   }
 
   deletClientById(id:number): Observable<APIResponseModel>{
-    return this.http.get<APIResponseModel>(environment.API_URL + "DeleteClientByClientId?clientId"+id)
+    return this.http.delete<APIResponseModel>(environment.API_URL + "DeleteClientByClientId?clientId="+id)
   }
 }
